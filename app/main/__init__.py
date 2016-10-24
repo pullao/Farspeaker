@@ -1,5 +1,6 @@
-from flask import Blueprint
+import flask
+from . import events, campaign
 
-main = Blueprint('main', __name__)
+main = flask.Blueprint('main', __name__)
 
-from . import routes, events
+from . import routes

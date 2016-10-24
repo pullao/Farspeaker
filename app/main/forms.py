@@ -1,10 +1,9 @@
-from flask_wtf import Form
-from wtforms.fields import StringField, SubmitField
-from wtforms.validators import Required
+import flask_wtf
+import wtforms
 
 
-class LoginForm(Form):
+class LoginForm(flask_wtf.Form):
     """Accepts a nickname and a room."""
-    name = StringField('Name', validators=[Required()])
+    name = wtforms.fields.StringField('Name', validators=[wtforms.validators.Required()])
     #room = StringField('Room', validators=[Required()])
-    submit = SubmitField('Start')
+    submit = wtforms.fields.SubmitField('Start')

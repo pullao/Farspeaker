@@ -1,5 +1,5 @@
-from flask import session
-from flask_socketio import emit, join_room, leave_room
+import flask
+import flask_socketio
 from .. import socketio
 import random
 
@@ -8,9 +8,9 @@ import random
 def joined(message):
     """Sent by clients when they enter a room.
     A status message is broadcast to all people in the room."""
-    room = session.get('room')
-    join_room(room)
-    emit('status', {'msg': session.get('name') + ' has joined.'}, room=room)
+    room = flask.session.get('room')
+    flask_socketio.join_room(room)
+    flask_socketio.emit('status', {'msg': flask.session.get('name') + ' has joined.'}, room=room)
 
 
 @socketio.on('text', namespace='/chat')
@@ -24,18 +24,18 @@ def text(message):
 def left(message):
     """Sent by clients when they leave a room.
     A status message is broadcast to all people in the room."""
-    room = session.get('room')
-    leave_room(room)
-    emit('status', {'msg': session.get('name') + ' has left the room.'}, room=room)
+    room = flask.session.get('room')
+    flask_socketio.leave_room(room)
+    flask_socketio.emit('status', {'msg': flask.session.get('name') + ' has left the room.'}, room=room)
 
 def parseMessage(message):
     print (message)
     content=message['msg']
     print (content)
     if content.startswith('/roll'):
-        room = session.get('room')
-        emit('status', {'msg': session.get('name') + ' rolled a ' + str(random.randint(1,6))})
+        room = flask.session.get('room')
+        flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
     else:
-        room = session.get('room')
-        emit('message', {'msg': session.get('name') + ':' + message['msg']}, room=room)
+        room = flask.session.get('room')
+        flask_socketio.emit('message', {'msg': flask.session.get('name') + ':' + message['msg']}, room=room)
 
