@@ -1,0 +1,18 @@
+p {
+    color: blue;
+}
+
+#leftcolumn {
+	width: 25%;
+	float: left;
+}
+
+#middlecolumn {
+	width: 50%;
+	float: left;
+}
+
+#rightcolumn {
+	width: 25%;
+	float: left;
+}
