@@ -3,6 +3,7 @@ import flask_socketio
 
 socketio = flask_socketio.SocketIO()
 
+from .main import main as main_blueprint
 
 def createApp(debug=False):
     """Create an application."""
@@ -10,9 +11,9 @@ def createApp(debug=False):
     app.debug = debug
     app.config['SECRET_KEY'] = 'gjr39dkjn344_!67#'
 
-    from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
     socketio.init_app(app)
     return app
+
 

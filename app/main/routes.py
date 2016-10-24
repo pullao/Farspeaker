@@ -1,6 +1,6 @@
 import flask
 from . import main
-import .forms
+from . import forms
 
 
 @main.route('/', methods=['GET', 'POST'])
