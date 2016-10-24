@@ -8,11 +8,47 @@ p {
 }
 
 #middlecolumn {
+	position:relative;
 	width: 50%;
 	float: left;
+	height: 90%;
 }
 
 #rightcolumn {
 	width: 25%;
 	float: left;
+}
+
+#chatwindow {
+  position:absolute;
+  top:0;
+  right: 8;
+  bottom: 60;
+  left: 8;
+
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  background: #141414;
+  color: #45D40C;
+  font: 1.25em 'Andale Mono', Consolas, 'Courier New';
+  line-height: 1.6em;
+
+  overflow: auto;
+ 
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+#textfield {
+	position: absolute;
+	bottom: 10;
+	left: 8;
+	right: 8;
+
+	width:100%;
 }
