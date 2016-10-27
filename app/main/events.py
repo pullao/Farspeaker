@@ -2,6 +2,8 @@ import flask
 import flask_socketio
 from .. import socketio
 import random
+from . import tokenizer
+import roll
 
 
 @socketio.on('joined', namespace='/chat')
@@ -33,9 +35,30 @@ def parseMessage(message):
     content=message['msg']
     print (content)
     if content.startswith('/roll'):
-        room = flask.session.get('room')
-        flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
+        #room = flask.session.get('room')
+        #flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
+        rollString = content[5:]
+        parsedList = parseRoll(rollString)
+        messageString = rollString + " -->"
+        resultsList = list()
+        total = 0
+        for x in parsedList:
+            result = x.calcValue()
+            total = x.modifyTotal(total, result)
+            resultsList = resultsList + [result]
+            messageString = messageString + " " + x.sign + " " + result
+        messageString = messageString + " = " + total
+        print messageString
+
     else:
         room = flask.session.get('room')
         flask_socketio.emit('message', {'msg': flask.session.get('name') + ':' + message['msg']}, room=room)
 
+
+def parseRoll(roll):
+    unparsedList = tokenizer.rollTokenize(list(), roll)
+    parsedList = list()
+    for x in unparsedList:
+        diceroll = roll.DiceRoll(x)
+        parsedList = parsedList + [diceroll]
+    return parsedList
