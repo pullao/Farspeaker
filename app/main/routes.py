@@ -1,6 +1,11 @@
 import flask
 from . import main
 from . import forms
+import os
+from werkzeug import secure_filename
+from flask import Flask, render_template, request
+
+
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -26,3 +31,14 @@ def chat():
     if name == '' or room == '':
         return flask.redirect(flask.url_for('.index'))
     return flask.render_template('chat.html', name=name)#, room=room)
+
+app=Flask(__name__)
+UPLOAD_FOLDER = 'uploads/'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+@main.route('/uploader', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+      f = request.files['file']
+      if f:
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
+        return flask.render_template('chat.html')

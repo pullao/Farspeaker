@@ -35,7 +35,6 @@
             function leave_room() {
                 socket.emit('left', {}, function() {
                     socket.disconnect();
-
                     // go back to the login page
                     window.location.href = "{{ url_for('main.index') }}";
                 });
@@ -58,7 +57,12 @@
             <!-- <a href="#" onclick="leave_room();">Leave this room</a> -->
             </div>
             <div id="rightcolumn">
-                <div id="options"><p>options here</p></div>
+                <div id="options"><p>options here</p>
+                    <form method="post" enctype="multipart/form-data" action="/uploader">
+                        <input type="file" name="file">
+                        <input type="submit">
+                    </form>
+                </div>
                 <div id="macros"><p>macros here</p></div>
                 <div id="rolls"><p>rolls here</p></div>
             </div>
