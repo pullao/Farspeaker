@@ -3,7 +3,7 @@ import flask_socketio
 from .. import socketio
 import random
 from . import tokenizer
-import roll
+from . import roll
 
 
 @socketio.on('joined', namespace='/chat')
