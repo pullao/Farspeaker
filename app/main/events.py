@@ -3,6 +3,7 @@ import flask_socketio
 from .. import socketio
 import random
 from . import tokenizer
+from . import activeCampaign
 import roll
 
 
@@ -52,7 +53,10 @@ def parseMessage(message):
 
     else:
         room = flask.session.get('room')
-        flask_socketio.emit('message', {'msg': flask.session.get('name') + ':' + message['msg']}, room=room)
+        transmission=flask.session.get('name') + ':' + message['msg']
+        activeCampaign.data['messages'][room].append(transmission);
+        print activeCampaign.data['messages'][room]
+        flask_socketio.emit('message', {'msg': transmission}, room=room)
 
 
 def parseRoll(newRoll):

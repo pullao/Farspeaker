@@ -50,7 +50,9 @@
             <div id="middlecolumn">
                 <div id="chatwindow">
                     <ul id="chat">
-
+                    {% for line in campaign.data['messages']['main'] %}
+                        <li>{{line}}</li>
+                    {% endfor %}
                     </ul>
                 </div>
                 <input id="textfield" size="80" placeholder="Enter your message here"><br><br>

@@ -1,6 +1,7 @@
 import flask
-from . import events, campaign
+from . import campaign
 
 main = flask.Blueprint('main', __name__)
+activeCampaign = campaign.Campaign()
 
-from . import routes
+from . import events, routes

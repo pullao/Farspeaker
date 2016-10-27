@@ -10,6 +10,8 @@ class Campaign(object):
 	def __init__ (self, loadFrom=None):
 		if loadFrom != None:
 			self.load(loadFrom)
+		else:
+			self.data['messages']['main']=["Hi Jake","Hi Oscar"]
 
 	def load (self, filename):
 		with open(self.dataPath + filename, 'r') as f:
