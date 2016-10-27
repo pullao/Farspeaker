@@ -3,7 +3,7 @@ import flask_socketio
 from .. import socketio
 import random
 from . import tokenizer
-from . import roll
+import roll
 
 
 @socketio.on('joined', namespace='/chat')
@@ -55,8 +55,8 @@ def parseMessage(message):
         flask_socketio.emit('message', {'msg': flask.session.get('name') + ':' + message['msg']}, room=room)
 
 
-def parseRoll(roll):
-    unparsedList = tokenizer.rollTokenize(list(), roll)
+def parseRoll(newRoll):
+    unparsedList = tokenizer.rollTokenize(list(), newRoll)
     parsedList = list()
     for x in unparsedList:
         diceroll = roll.DiceRoll(x)
