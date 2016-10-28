@@ -13,9 +13,12 @@ def rollTokenize(rollList, messageString):
 
 
 if __name__ == '__main__':
-	rollist = rollTokenize(list(), "+ 4d6 + 3d8 - 2d2  ")
-	for x in rollist:
-		print x
-	rollist2 = rollTokenize(list(), "/ 4d6 + askdmqwoebqwkpjeqw * 2d20141254")
-	for x in rollist2:
-		print x
+	#rollist = rollTokenize(list(), "+ 4d6 + 3d8 - 2d2  ")
+	#for x in rollist:
+	#	print x
+	#rollist2 = rollTokenize(list(), "/ 4d6 + askdmqwoebqwkpjeqw * 2d20141254")
+	#for x in rollist2:
+	#	print x
+    rollist3 = rollTokenize(list(), "  1d6 + 2")
+    for x in rollist3:
+        print x

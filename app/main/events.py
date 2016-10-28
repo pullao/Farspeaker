@@ -39,16 +39,20 @@ def parseMessage(message):
         #flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
         rollString = content[5:]
         parsedList = parseRoll(rollString)
-        messageString = rollString + " -->"
+        messageString = flask.session.get('name') + " rolled:" + rollString + " -->"
         resultsList = list()
         total = 0
+        diceIntermediates = ""
         for x in parsedList:
             result = x.calcValue()
+            print result
             total = x.modifyTotal(total, result)
             resultsList = resultsList + [result]
-            messageString = messageString + " " + x.sign + " " + result
-        messageString = messageString + " = " + total
-        print messageString
+            diceIntermediates = diceIntermediates + " " + x.sign + " " + str(result)
+        diceIntermediates = diceIntermediates[2:]
+        messageString = messageString + diceIntermediates + " = " + str(total)
+        room = flask.session.get('room')
+        flask_socketio.emit('diceroll', {'msg': messageString}, room=room)
 
     else:
         room = flask.session.get('room')
@@ -56,7 +60,8 @@ def parseMessage(message):
 
 
 def parseRoll(newRoll):
-    unparsedList = tokenizer.rollTokenize(list(), newRoll)
+    plusString = "+ " + newRoll
+    unparsedList = tokenizer.rollTokenize(list(), plusString)
     parsedList = list()
     for x in unparsedList:
         diceroll = roll.DiceRoll(x)

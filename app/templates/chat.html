@@ -23,6 +23,12 @@
                     // $('#chat').val($('#chat').val() + data.msg + '\n');
                     $('#chatwindow').scrollTop($('#chatwindow')[0].scrollHeight);
                 });
+                socket.on('diceroll', function(data) {
+                    console.log(data.msg);
+                    $('#rollchat').append('<li>'+data.msg+'</li>');
+                    // $('#chat').val($('#chat').val() + data.msg + '\n');
+                    $('#rolls').scrollTop($('#rolls')[0].scrollHeight);
+                });
                 $('#textfield').keypress(function(e) {
                     var code = e.keyCode || e.which;
                     if (code == 13) {
@@ -64,7 +70,11 @@
                     </form>
                 </div>
                 <div id="macros"><p>macros here</p></div>
-                <div id="rolls"><p>rolls here</p></div>
+                <div id="rolls"><p>rolls here</p>
+                    <ul id="rollchat">
+
+                    </ul>
+                </div>
             </div>
         </div>
     </body>

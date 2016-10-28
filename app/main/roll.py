@@ -23,7 +23,7 @@ class DiceRoll:
 
    def rollDice(self, num, sides):
       resultList = list()
-      for x in range(1, int(num)):
+      for x in range(0, int(num)):
          result = random.randint(1, int(sides))
          resultList = resultList + [result]
       return resultList
@@ -41,4 +41,5 @@ class DiceRoll:
 
 if __name__ == '__main__':
    diceroller = DiceRoll("+ 4d6")
-   diceroller.calcValue()
+   value = diceroller.calcValue()
+   print "Total " + str(value)
