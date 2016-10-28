@@ -56,6 +56,7 @@ def parseMessage(message):
         transmission=flask.session.get('name') + ':' + message['msg']
         activeCampaign.data['messages'][room].append(transmission);
         print activeCampaign.data['messages'][room]
+        activeCampaign.save()
         flask_socketio.emit('message', {'msg': transmission}, room=room)
 
 
