@@ -42,4 +42,4 @@ def upload_file():
       f = request.files['file']
       if f:
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
-        return flask.render_template('chat.html')
+        return flask.render_template('chat.html', campaign=activeCampaign)
