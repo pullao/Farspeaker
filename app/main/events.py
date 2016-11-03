@@ -4,7 +4,9 @@ from .. import socketio
 import random
 from . import tokenizer
 from . import activeCampaign
+from . import message
 import roll
+
 
 
 @socketio.on('joined', namespace='/chat')
@@ -31,16 +33,16 @@ def left(message):
     flask_socketio.leave_room(room)
     flask_socketio.emit('status', {'msg': flask.session.get('name') + ' has left the room.'}, room=room)
 
-def parseMessage(message):
-    print (message)
-    content=message['msg']
+def parseMessage(msg):
+    print (msg)
+    content=msg['msg']
     print (content)
     if content.startswith('/roll'):
         #room = flask.session.get('room')
         #flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
         rollString = content[5:]
         parsedList = parseRoll(rollString)
-        messageString = flask.session.get('name') + " rolled:" + rollString + " -->"
+        msgString = flask.session.get('name') + " rolled:" + rollString + " -->"
         resultsList = list()
         total = 0
         diceIntermediates = ""
@@ -51,17 +53,17 @@ def parseMessage(message):
             resultsList = resultsList + [result]
             diceIntermediates = diceIntermediates + " " + x.sign + " " + str(result)
         diceIntermediates = diceIntermediates[2:]
-        messageString = messageString + diceIntermediates + " = " + str(total)
+        msgString = msgString + diceIntermediates + " = " + str(total)
         room = flask.session.get('room')
-        flask_socketio.emit('diceroll', {'msg': messageString}, room=room)
+        flask_socketio.emit('diceroll', {'msg': msgString}, room=room)
 
     else:
         room = flask.session.get('room')
-        transmission=flask.session.get('name') + ':' + message['msg']
+        transmission=message.Message(activeCampaign.getID(flask.session.get('room')),
+            flask.session.get('name'),msg['msg'])
         activeCampaign.data['messages'][room].append(transmission);
-        print activeCampaign.data['messages'][room]
         activeCampaign.save()
-        flask_socketio.emit('message', {'msg': transmission}, room=room)
+        flask_socketio.emit('message', {'msg': str(transmission)}, room=room)
 
 
 def parseRoll(newRoll):
