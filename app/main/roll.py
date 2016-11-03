@@ -1,4 +1,5 @@
 import random
+import exceptions
 
 class DiceRoll:
    'base class for a single roll'
@@ -6,6 +7,8 @@ class DiceRoll:
    def __init__(self, rollString):
       self.rawString = rollString
       self.sign = self.rawString[0]
+      if(self.sign != "+" and self.sign != "-" and self.sign != "*" and self.sign != "/"):
+         raise DiceRollError
    
    def calcValue(self):
       rollString = self.rawString[1:]
@@ -37,9 +40,3 @@ class DiceRoll:
          return total * result
       elif(self.sign == "/"):
          return total / result
-
-
-if __name__ == '__main__':
-   diceroller = DiceRoll("+ 4d6")
-   value = diceroller.calcValue()
-   print "Total " + str(value)
