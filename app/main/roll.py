@@ -1,5 +1,8 @@
 import random
-import exceptions
+import farspeakerexceptions
+
+class DiceRollError(Exception):
+    pass
 
 class DiceRoll:
    'base class for a single roll'
@@ -8,7 +11,7 @@ class DiceRoll:
       self.rawString = rollString
       self.sign = self.rawString[0]
       if(self.sign != "+" and self.sign != "-" and self.sign != "*" and self.sign != "/"):
-         raise DiceRollError
+         raise DiceRollError(rollString)
    
    def calcValue(self):
       rollString = self.rawString[1:]
