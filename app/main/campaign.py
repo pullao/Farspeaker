@@ -20,6 +20,9 @@ class Campaign(object):
 		try:
 			with open(self.dataPath + filename, 'r') as f:
 				self.data = json.load(f)
+
+			for i in range(0,len(data['messages']['main'])):
+				data['messages']['main'][i]=Message.fromString(data['messages']['main'][i])
 		except:
 			print "Load File Not found"
 			# TODO: for now just create new, eventually prompt the user
@@ -32,5 +35,8 @@ class Campaign(object):
 			self.saveFile=self.dataPath + filename
 		else: 
 			self.saveFile=self.dataPath+self.data['name'].replace(' ','')+'.txt'
+		##TODO add another loop to handle multiple threads
+		for i in range(0,len(data['messages']['main'])):
+			data['messages']['main'][i]=str(data['messages']['main'][i])
 		with open(self.saveFile, 'w') as f:
 			json.dump(self.data, f)
