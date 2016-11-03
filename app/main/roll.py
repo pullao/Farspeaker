@@ -1,4 +1,5 @@
 import random
+import farspeakerexceptions
 
 class DiceRollError(Exception):
     pass
