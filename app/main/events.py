@@ -63,7 +63,7 @@ def parseMessage(msg):
             flask.session.get('name'),msg['msg'])
         activeCampaign.data['messages'][room].append(transmission);
         activeCampaign.save()
-        flask_socketio.emit('message', {'msg': str(transmission)}, room=room)
+        flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text}, room=room)
 
 
 def parseRoll(newRoll):

@@ -60,7 +60,7 @@
                 <div id="chatwindow">
                     <ul id="chat">
                     {% for line in campaign.data['messages']['main'] %}
-                        <li>{{line}}</li>
+                        <li>{{line.sender+': '+line.text}}</li>
                     {% endfor %}
                     </ul>
                 </div>
