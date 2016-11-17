@@ -49,23 +49,58 @@
                 });
             }
         </script>
+        
+        <script>
+        function openConvo(evt, convoName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i=0;i<tabcontent.length;i++){
+                tabcontent[i].style.display="none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for(i=0;i<tablinks.length;i++){
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(convoName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        </script>
+        <script>
+            document.getElementById("defaultOpen").click();
+        </script>
     </head>
     <body>
         <h1>Flask-SocketIO-Chat</h1>
         <div id="pagewrap">
             <div id="leftcolumn">
                 <div id="characters"><p>characters here</p></div>
+                <ul class="tab">
+                    <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'Main')" id="defaultOpen">Main</a></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'convo2')">convo2</a></li>
+                </ul>
             </div>
             <div id="middlecolumn">
-                <div id="chatwindow">
-                    <ul id="chat">
-                    {% for line in campaign.data['messages']['main'] %}
-                        <li>{{line}}</li>
-                    {% endfor %}
-                    </ul>
+                <div id="convo2" class="tabcontent">
+                    <span onclick="this.parentElement.style.display='none'">x</span> 
+                    <div id="chatwindow">
+                        <ul id="chat2">
+                        {% for line in campaign.data['messages']['main'] %}
+                            <li>{{line.sender+': '+line.text}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                        
                 </div>
+                <div id="Main" class="tabcontent">
+                    <div id="chatwindow">
+                        <ul id="chat">
+                            {% for line in campaign.data['messages']['main'] %}
+                                <li>{{line.sender+': '+line.text}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>  
                 <input id="textfield" size="80" placeholder="Enter your message here"><br><br>
-            <!-- <a href="#" onclick="leave_room();">Leave this room</a> -->
             </div>
             <div id="rightcolumn">
                 <div id="options"><p>options here</p>
