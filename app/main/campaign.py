@@ -1,11 +1,11 @@
 import json
-from . import message
+from . import message, user
 
 class Campaign(object):
 
 	dataPath='app/Data/'
 	saveFile=None
-	data = { 'name': 'New Campaign', 'participants': [], 'messages': {}}
+	data = { 'name': 'New Campaign', 'participants': {}, 'messages': {}}
 
 
 	def __init__ (self, loadFrom=None):
@@ -52,3 +52,10 @@ class Campaign(object):
 		if len(self.data['messages'][thread])==0:
 			return 0
 		return self.data['messages'][thread][-1].ID+1
+
+	def addUser(player):
+		if player in data['participants']:
+			return 0
+		else:
+			data['participants'][player] = user.User(player)
+			return 1
