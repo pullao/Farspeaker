@@ -53,6 +53,11 @@ p {
 	width:100%;
 }
 
+#aliasfield {
+
+  width:100%;
+}
+
 /* Style the list */
 ul.tab {
     list-style-type: none;
