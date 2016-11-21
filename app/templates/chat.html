@@ -23,9 +23,9 @@
                 });
                 socket.on('message', function(data) {
                     console.log(data.msg);
-                    $('#'+activeThread).find('#chat').append('<li>'+data.msg+'</li>');
+                    $('#'+data.thread).find('#chat').append('<li>'+data.msg+'</li>');
                     // $('#chat').val($('#chat').val() + data.msg + '\n');
-                    $('#'+activeThread).find('#chatwindow').scrollTop($('#'+activeThread).find('#chatwindow')[0].scrollHeight);
+                    $('#'+data.thread).find('#chatwindow').scrollTop($('#'+data.thread).find('#chatwindow')[0].scrollHeight);
                 });
                 socket.on('diceroll', function(data) {
                     console.log(data.msg);
