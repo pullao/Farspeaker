@@ -55,7 +55,12 @@ p {
 
 #aliasfield {
 
-  width:100%;
+  width:90%;
+}
+
+#threadfield {
+
+  width:90%;
 }
 
 /* Style the list */

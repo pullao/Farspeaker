@@ -6,36 +6,17 @@
             "{\"text\": \"new\", \"sender\": \"lol\", \"ID\": 1}", 
             "{\"text\": \"hey there buddy\", \"sender\": \"dan\", \"ID\": 2}", 
             "{\"text\": \"well\", \"sender\": \"dan\", \"ID\": 3}", 
-            "{\"text\": \"but does this work?\", \"sender\": \"lol\", \"ID\": 4}", 
-            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 5}", 
-            "{\"text\": \"Hi\", \"sender\": \"Dan\", \"ID\": 6}", 
-            "{\"text\": \"message\", \"sender\": \"Dan\", \"ID\": 7}", 
-            "{\"text\": \"message\", \"sender\": \"message\", \"ID\": 8}", 
-            "{\"text\": \"this isn't working\", \"sender\": \"message\", \"ID\": 9}", 
-            "{\"text\": \"dan\", \"sender\": \"Dan\", \"ID\": 10}", 
-            "{\"text\": \"Hello\", \"sender\": \"New Char\", \"ID\": 11}", 
-            "{\"text\": \"Hello\", \"sender\": \"New Char\", \"ID\": 12}", 
-            "{\"text\": \"Hello\", \"sender\": \"default\", \"ID\": 13}"
+            "{\"text\": \"but does this work?\", \"sender\": \"lol\", \"ID\": 4}"
         ], 
         "main": [
             "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 
             "{\"text\": \"main\", \"sender\": \"lol\", \"ID\": 1}", 
             "{\"text\": \"is this thing on?\", \"sender\": \"lol\", \"ID\": 2}", 
-            "{\"text\": \"is this thing still on?\", \"sender\": \"lol\", \"ID\": 3}", 
-            "{\"text\": \"Did that work\", \"sender\": \"dan\", \"ID\": 4}", 
-            "{\"text\": \"Dan\", \"sender\": \"Dan\", \"ID\": 5}", 
-            "{\"text\": \"Dan\", \"sender\": \"Dan\", \"ID\": 6}", 
-            "{\"text\": \"rip\", \"sender\": \"dan\", \"ID\": 7}", 
-            "{\"text\": \"hi\", \"sender\": \"Dan\", \"ID\": 8}", 
-            "{\"text\": \"Hope\", \"sender\": \"Dan\", \"ID\": 9}", 
-            "{\"text\": \"Did i fix it?\", \"sender\": \"Dan\", \"ID\": 10}", 
-            "{\"text\": \"I totes did\", \"sender\": \"Shady Dude\", \"ID\": 11}", 
-            "{\"text\": \"This is dan\", \"sender\": \"Dan\", \"ID\": 12}", 
-            "{\"text\": \"This is not dan\", \"sender\": \"Dan\", \"ID\": 13}", 
-            "{\"text\": \"This is dan\", \"sender\": \"Dan\", \"ID\": 14}", 
-            "{\"text\": \"this is not dan\", \"sender\": \"Not Dan\", \"ID\": 15}", 
-            "{\"text\": \"this is dan again\", \"sender\": \"Dan\", \"ID\": 16}", 
-            "{\"text\": \"this is also not dan\", \"sender\": \"Not Dan\", \"ID\": 17}"
+            "{\"text\": \"Hi im a new character\", \"sender\": \"Ezekiel\", \"ID\": 3}"
+        ], 
+        "march": [
+            "{\"text\": \"And now im in a new thread\", \"sender\": \"Ezekiel\", \"ID\": -1}", 
+            "{\"text\": \"Well done\", \"sender\": \"Dan\", \"ID\": 0}"
         ]
     }, 
     "name": "New Campaign"

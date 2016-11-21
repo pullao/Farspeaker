@@ -47,9 +47,20 @@
                         name = $('#aliasfield').val();
                         if (name.length>0){
                             socket.emit('character', {msg: name, thread: activeThread});
-                        }
-                        $('#characters').append("<li><button onclick=\"switchCharacter('"+name+"')\">"+name+"</button>")
+                            $('#characters').append("<li><button onclick=\"switchCharacter('"+name+"')\">"+name+"</button>");
+                        } 
                         $('#aliasfield').val('');
+                    }
+                });
+                $('#threadfield').keypress(function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        name = $('#threadfield').val();
+                        if (name.length>0){
+                            $(".tab").append("<li><a href=\"javascript:void(0)\" id=\""+name.toLowerCase()+"link\" class=\"tablinks\" onclick=\"openConvo(event, '"+name.toLowerCase()+"')\">"+name+"</a></li>");
+                            $("#middlecolumn").append("<div id=\""+name.toLowerCase()+"\" class=\"tabcontent\"><div id=\"chatwindow\"><ul id=\"chat\"></ul></div></div>")
+                        }
+                        $('#threadfield').val('');
                     }
                 });
             });
@@ -98,6 +109,7 @@
                         <li><a href="javascript:void(0)" id="{{thread}}link" class="tablinks" onclick="openConvo(event, '{{thread}}')">{{thread.title()}}</a></li>
                     {% endfor %}
                 </ul>
+                <input id="threadfield" size="80" placeholder="Enter a new thread name">
             </div>
             <div id="middlecolumn">
 <!--            <div id="convo2" class="tabcontent">
