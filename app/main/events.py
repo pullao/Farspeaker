@@ -58,12 +58,13 @@ def parseMessage(msg):
         flask_socketio.emit('diceroll', {'msg': msgString}, room=room)
 
     else:
-        room = flask.session.get('room')
-        transmission=message.Message(activeCampaign.getID(flask.session.get('room')),
+        thread = msg['thread']
+        transmission=message.Message(activeCampaign.getID(thread),
             flask.session.get('name'),msg['msg'])
-        activeCampaign.data['messages'][room].append(transmission);
+        print(transmission);
+        activeCampaign.data['messages'][thread].append(transmission);
         activeCampaign.save()
-        flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text}, room=room)
+        flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text}, room=flask.session.get('room'))
 
 
 def parseRoll(newRoll):
