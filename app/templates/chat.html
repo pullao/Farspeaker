@@ -103,6 +103,9 @@
             <div id="leftcolumn">
                 <ul id="characters">
                     <li><button onclick="switchCharacter('resetchar')">Reset Character</button>
+                    {% for character in campaign.data['participants'][name] %}
+                        <li><button onclick="switchCharacter('{{character}}')">{{character}}</button>
+                    {% endfor %}
                 </ul>
                 <input id="aliasfield" size="80" placeholder="Enter a new character name">
             </div>
