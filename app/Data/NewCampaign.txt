@@ -12,7 +12,10 @@
             "{\"text\": \"message\", \"sender\": \"Dan\", \"ID\": 7}", 
             "{\"text\": \"message\", \"sender\": \"message\", \"ID\": 8}", 
             "{\"text\": \"this isn't working\", \"sender\": \"message\", \"ID\": 9}", 
-            "{\"text\": \"dan\", \"sender\": \"Dan\", \"ID\": 10}"
+            "{\"text\": \"dan\", \"sender\": \"Dan\", \"ID\": 10}", 
+            "{\"text\": \"Hello\", \"sender\": \"New Char\", \"ID\": 11}", 
+            "{\"text\": \"Hello\", \"sender\": \"New Char\", \"ID\": 12}", 
+            "{\"text\": \"Hello\", \"sender\": \"default\", \"ID\": 13}"
         ], 
         "main": [
             "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 
@@ -26,7 +29,13 @@
             "{\"text\": \"hi\", \"sender\": \"Dan\", \"ID\": 8}", 
             "{\"text\": \"Hope\", \"sender\": \"Dan\", \"ID\": 9}", 
             "{\"text\": \"Did i fix it?\", \"sender\": \"Dan\", \"ID\": 10}", 
-            "{\"text\": \"I totes did\", \"sender\": \"Shady Dude\", \"ID\": 11}"
+            "{\"text\": \"I totes did\", \"sender\": \"Shady Dude\", \"ID\": 11}", 
+            "{\"text\": \"This is dan\", \"sender\": \"Dan\", \"ID\": 12}", 
+            "{\"text\": \"This is not dan\", \"sender\": \"Dan\", \"ID\": 13}", 
+            "{\"text\": \"This is dan\", \"sender\": \"Dan\", \"ID\": 14}", 
+            "{\"text\": \"this is not dan\", \"sender\": \"Not Dan\", \"ID\": 15}", 
+            "{\"text\": \"this is dan again\", \"sender\": \"Dan\", \"ID\": 16}", 
+            "{\"text\": \"this is also not dan\", \"sender\": \"Not Dan\", \"ID\": 17}"
         ]
     }, 
     "name": "New Campaign"

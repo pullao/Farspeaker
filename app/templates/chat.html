@@ -48,10 +48,15 @@
                         if (name.length>0){
                             socket.emit('character', {msg: name, thread: activeThread});
                         }
+                        $('#characters').append("<li><button onclick=\"switchCharacter('"+name+"')\">"+name+"</button>")
                         $('#aliasfield').val('');
                     }
                 });
             });
+
+            function switchCharacter(char){
+                socket.emit('character', {msg: char, thread: activeThread});
+            }
 
             function leave_room() {
                 socket.emit('left', {}, function() {
@@ -82,7 +87,9 @@
         <h1>Flask-SocketIO-Chat</h1>
         <div id="pagewrap">
             <div id="leftcolumn">
-                <div id="characters"><p>characters here</p></div>
+                <ul id="characters">
+                    <li><button onclick="switchCharacter('resetchar')">Reset Character</button>
+                </ul>
                 <input id="aliasfield" size="80" placeholder="Enter a new character name">
                 <ul class="tab">
                     <!-- <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'main')" id="defaultOpen">main</a></li>

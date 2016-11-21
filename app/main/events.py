@@ -29,7 +29,10 @@ def text(message):
 def character(message):
     """Sent by a client when the user entered a new character.
     Used to switch to a different alias"""
-    flask.session['character']=message['msg']
+    if message['msg']=='resetchar':
+        flask.session['character']=None
+    else:
+        flask.session['character']=message['msg']
 
 @socketio.on('left', namespace='/chat')
 def left(message):
