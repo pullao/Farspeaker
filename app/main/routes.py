@@ -15,6 +15,8 @@ def index():
     form = forms.LoginForm()
     if form.validate_on_submit():
         flask.session['name'] = form.name.data
+        if not form.name.data in activeCampaign.data['participants']:
+            activeCampaign.data['participants'][form.name.data]=[]
         flask.session['room'] = 'main'
         return flask.redirect(flask.url_for('.chat'))
     elif flask.request.method == 'GET':

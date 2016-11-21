@@ -1,12 +1,18 @@
 {
-    "participants": {}, 
+    "participants": {
+        "Dan": [
+            "Better Dan"
+        ]
+    }, 
     "messages": {
         "new": [
             "{\"text\": \"This is a new thread\", \"sender\": \"System\", \"ID\": 0}", 
             "{\"text\": \"new\", \"sender\": \"lol\", \"ID\": 1}", 
             "{\"text\": \"hey there buddy\", \"sender\": \"dan\", \"ID\": 2}", 
             "{\"text\": \"well\", \"sender\": \"dan\", \"ID\": 3}", 
-            "{\"text\": \"but does this work?\", \"sender\": \"lol\", \"ID\": 4}"
+            "{\"text\": \"but does this work?\", \"sender\": \"lol\", \"ID\": 4}", 
+            "{\"text\": \"Message\", \"sender\": \"Dan\", \"ID\": 5}", 
+            "{\"text\": \"j\", \"sender\": \"Better Dan\", \"ID\": 6}"
         ], 
         "main": [
             "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 

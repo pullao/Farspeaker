@@ -29,10 +29,14 @@ def text(message):
 def character(message):
     """Sent by a client when the user entered a new character.
     Used to switch to a different alias"""
-    if message['msg']=='resetchar':
+    name=message['msg']
+    if name=='resetchar':
         flask.session['character']=None
     else:
-        flask.session['character']=message['msg']
+        flask.session['character']=name
+        if not name in activeCampaign.data['participants'][flask.session.get('name')]:
+            activeCampaign.data['participants'][flask.session.get('name')].append(name)
+            activeCampaign.save()
 
 @socketio.on('left', namespace='/chat')
 def left(message):
