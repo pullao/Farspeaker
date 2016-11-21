@@ -75,11 +75,11 @@
         <div id="pagewrap">
             <div id="leftcolumn">
                 <div id="characters"><p>characters here</p></div>
-                <ul class="tabs">
+                <ul class="tab">
                     <!-- <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'main')" id="defaultOpen">main</a></li>
                     <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'convo2')">convo2</a></li> -->
                     {% for thread in campaign.data['messages'] %}
-                        <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, '{{thread}}')">{{thread.title()}}</a></li>
+                        <li><a href="javascript:void(0)" id="{{thread}}link" class="tablinks" onclick="openConvo(event, '{{thread}}')">{{thread.title()}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
