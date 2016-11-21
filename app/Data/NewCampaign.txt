@@ -1,1 +1,19 @@
-{"participants": [], "messages": {"main": ["{\"text\": \"This is a saved campaign\", \"sender\": \"Dan\", \"ID\": 0}", "{\"text\": \"It is being loaded\", \"sender\": \"Dan\", \"ID\": 1}", "{\"text\": \"I have more than one personality\", \"sender\": \"Dan2\", \"ID\": 2}", "{\"text\": \"That's nice, Dan\", \"sender\": \"Dan\", \"ID\": 3}", "{\"text\": \";)\\\\\", \"sender\": \"Dan2\", \"ID\": 4}", "{\"text\": \"Hello\", \"sender\": \"Hombre\", \"ID\": 5}", "{\"text\": \"Taafnkenjgr\", \"sender\": \"Hombre\", \"ID\": 6}", "{\"text\": \"mvfeb;kve\", \"sender\": \"Hombre\", \"ID\": 7}", "{\"text\": \"kcbdksv\", \"sender\": \"Hombre\", \"ID\": 8}", "{\"text\": \"knlknas\", \"sender\": \"Hombre\", \"ID\": 9}", "{\"text\": \"hey\", \"sender\": \"Hombre\", \"ID\": 10}", "{\"text\": \"fewknl\", \"sender\": \"Hombre\", \"ID\": 11}", "{\"text\": \"grewg\", \"sender\": \"Hombre\", \"ID\": 12}", "{\"text\": \"grekwjbge\", \"sender\": \"Hombre\", \"ID\": 13}"]}, "name": "New Campaign"}
+{
+    "participants": {}, 
+    "messages": {
+        "new": [
+            "{\"text\": \"This is a new thread\", \"sender\": \"System\", \"ID\": 0}", 
+            "{\"text\": \"new\", \"sender\": \"lol\", \"ID\": 1}", 
+            "{\"text\": \"hey there buddy\", \"sender\": \"dan\", \"ID\": 2}", 
+            "{\"text\": \"well\", \"sender\": \"dan\", \"ID\": 3}", 
+            "{\"text\": \"but does this work?\", \"sender\": \"lol\", \"ID\": 4}"
+        ], 
+        "main": [
+            "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 
+            "{\"text\": \"main\", \"sender\": \"lol\", \"ID\": 1}", 
+            "{\"text\": \"is this thing on?\", \"sender\": \"lol\", \"ID\": 2}", 
+            "{\"text\": \"is this thing still on?\", \"sender\": \"lol\", \"ID\": 3}"
+        ]
+    }, 
+    "name": "New Campaign"
+}

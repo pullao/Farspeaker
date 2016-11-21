@@ -1,11 +1,11 @@
 import json
-from . import message
+from . import message, user
 
 class Campaign(object):
 
 	dataPath='app/Data/'
 	saveFile=None
-	data = { 'name': 'New Campaign', 'participants': [], 'messages': {}}
+	data = { 'name': 'New Campaign', 'participants': {}, 'messages': {}}
 
 
 	def __init__ (self, loadFrom=None):
@@ -22,8 +22,9 @@ class Campaign(object):
 			with open(self.dataPath + filename, 'r') as f:
 				self.data = json.load(f)
 
-			for i in range(0,len(self.data['messages']['main'])):
-				self.data['messages']['main'][i]=message.Message.fromString(self.data['messages']['main'][i])
+			for thread in self.data['messages']:
+				for i in range(0,len(self.data['messages'][thread])):
+					self.data['messages'][thread][i]=message.Message.fromString(self.data['messages'][thread][i])
 		except:
 			print "Load File Not found"
 			# TODO: for now just create new, eventually prompt the user
@@ -37,13 +38,15 @@ class Campaign(object):
 		else: 
 			self.saveFile=self.dataPath+self.data['name'].replace(' ','')+'.txt'
 		##TODO add another loop to handle multiple threads
-		for i in range(0,len(self.data['messages']['main'])):
-			self.data['messages']['main'][i]=str(self.data['messages']['main'][i])
+		for thread in self.data['messages']:
+			for i in range(0,len(self.data['messages'][thread])):
+				self.data['messages'][thread][i]=str(self.data['messages'][thread][i])
 		with open(self.saveFile, 'w') as f:
-			json.dump(self.data, f)
+			json.dump(self.data, f, indent=4)
 		#This is not a good way to handle this, replace this code
-		for i in range(0,len(self.data['messages']['main'])):
-			self.data['messages']['main'][i]=message.Message.fromString(self.data['messages']['main'][i])
+		for thread in self.data['messages']:
+			for i in range(0,len(self.data['messages'][thread])):
+				self.data['messages'][thread][i]=message.Message.fromString(self.data['messages'][thread][i])
 
 
 	def getID (self, thread):
@@ -52,3 +55,10 @@ class Campaign(object):
 		if len(self.data['messages'][thread])==0:
 			return 0
 		return self.data['messages'][thread][-1].ID+1
+
+	def addUser(player):
+		if player in data['participants']:
+			return 0
+		else:
+			data['participants'][player] = user.User(player)
+			return 1
