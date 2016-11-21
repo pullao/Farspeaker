@@ -16,11 +16,15 @@ class Message(object):
 
 	def __init__(self,ID,user,text,character=None,thread='main'):
 		self.text=text
-		self.sender=user# TODO user.name
+		if character!=None:
+			self.sender=character
+		else:
+			self.sender=user# TODO user.name
+		self.user=user
 		self.ID=ID
 		#TODO I dont think we need 'thread' 
 		#self.thread='main'
-		#self.charName=character.name
+		#self.charName=character
 		#self.picturePath=character.picturePath
 		pass
 

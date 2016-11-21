@@ -41,7 +41,34 @@
                         socket.emit('text', {msg: text, thread: activeThread});
                     }
                 });
+                $('#aliasfield').keypress(function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        name = $('#aliasfield').val();
+                        if (name.length>0){
+                            socket.emit('character', {msg: name, thread: activeThread});
+                            $('#characters').append("<li><button onclick=\"switchCharacter('"+name+"')\">"+name+"</button>");
+                        } 
+                        $('#aliasfield').val('');
+                    }
+                });
+                $('#threadfield').keypress(function(e) {
+                    var code = e.keyCode || e.which;
+                    if (code == 13) {
+                        name = $('#threadfield').val();
+                        if (name.length>0){
+                            $(".tab").append("<li><a href=\"javascript:void(0)\" id=\""+name.toLowerCase()+"link\" class=\"tablinks\" onclick=\"openConvo(event, '"+name.toLowerCase()+"')\">"+name+"</a></li>");
+                            $("#middlecolumn").append("<div id=\""+name.toLowerCase()+"\" class=\"tabcontent\"><div id=\"chatwindow\"><ul id=\"chat\"></ul></div></div>")
+                        }
+                        $('#threadfield').val('');
+                    }
+                });
             });
+
+            function switchCharacter(char){
+                socket.emit('character', {msg: char, thread: activeThread});
+            }
+
             function leave_room() {
                 socket.emit('left', {}, function() {
                     socket.disconnect();
@@ -66,15 +93,15 @@
             evt.currentTarget.className += " active";
         }
         </script>
-        <script>
-            document.getElementById("defaultOpen").click();
-        </script>
     </head>
     <body>
         <h1>Flask-SocketIO-Chat</h1>
         <div id="pagewrap">
             <div id="leftcolumn">
-                <div id="characters"><p>characters here</p></div>
+                <ul id="characters">
+                    <li><button onclick="switchCharacter('resetchar')">Reset Character</button>
+                </ul>
+                <input id="aliasfield" size="80" placeholder="Enter a new character name">
                 <ul class="tab">
                     <!-- <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'main')" id="defaultOpen">main</a></li>
                     <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'convo2')">convo2</a></li> -->
@@ -82,6 +109,7 @@
                         <li><a href="javascript:void(0)" id="{{thread}}link" class="tablinks" onclick="openConvo(event, '{{thread}}')">{{thread.title()}}</a></li>
                     {% endfor %}
                 </ul>
+                <input id="threadfield" size="80" placeholder="Enter a new thread name">
             </div>
             <div id="middlecolumn">
 <!--            <div id="convo2" class="tabcontent">

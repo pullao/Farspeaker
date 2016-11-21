@@ -53,6 +53,16 @@ p {
 	width:100%;
 }
 
+#aliasfield {
+
+  width:90%;
+}
+
+#threadfield {
+
+  width:90%;
+}
+
 /* Style the list */
 ul.tab {
     list-style-type: none;

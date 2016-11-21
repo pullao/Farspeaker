@@ -13,9 +13,10 @@ import roll
 def joined(message):
     """Sent by clients when they enter a room.
     A status message is broadcast to all people in the room."""
+    # Removing this feature the easy way
     room = flask.session.get('room')
     flask_socketio.join_room(room)
-    flask_socketio.emit('status', {'msg': flask.session.get('name') + ' has joined.'}, room=room)
+    # flask_socketio.emit('status', {'msg': flask.session.get('name') + ' has joined.'}, room=room)
 
 
 @socketio.on('text', namespace='/chat')
@@ -24,6 +25,14 @@ def text(message):
     The message is sent to all people in the room."""
     parseMessage(message)
 
+@socketio.on('character', namespace='/chat')
+def character(message):
+    """Sent by a client when the user entered a new character.
+    Used to switch to a different alias"""
+    if message['msg']=='resetchar':
+        flask.session['character']=None
+    else:
+        flask.session['character']=message['msg']
 
 @socketio.on('left', namespace='/chat')
 def left(message):
@@ -59,9 +68,15 @@ def parseMessage(msg):
 
     else:
         thread = msg['thread']
+        try:
+            character = flask.session.get('character')
+        except:
+            character = None
         transmission=message.Message(activeCampaign.getID(thread),
-            flask.session.get('name'),msg['msg'])
+            flask.session.get('name'),msg['msg'],character=character)
         print(transmission);
+        if not thread in activeCampaign.data['messages']:
+            activeCampaign.data['messages'][thread]=[]
         activeCampaign.data['messages'][thread].append(transmission);
         activeCampaign.save()
         flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text, 'thread': thread}, room=flask.session.get('room'))

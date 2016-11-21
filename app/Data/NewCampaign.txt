@@ -12,7 +12,11 @@
             "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 
             "{\"text\": \"main\", \"sender\": \"lol\", \"ID\": 1}", 
             "{\"text\": \"is this thing on?\", \"sender\": \"lol\", \"ID\": 2}", 
-            "{\"text\": \"is this thing still on?\", \"sender\": \"lol\", \"ID\": 3}"
+            "{\"text\": \"Hi im a new character\", \"sender\": \"Ezekiel\", \"ID\": 3}"
+        ], 
+        "march": [
+            "{\"text\": \"And now im in a new thread\", \"sender\": \"Ezekiel\", \"ID\": -1}", 
+            "{\"text\": \"Well done\", \"sender\": \"Dan\", \"ID\": 0}"
         ]
     }, 
     "name": "New Campaign"
