@@ -34,6 +34,7 @@ def chat():
     return flask.render_template('chat.html', name=name, campaign=activeCampaign)#, room=room)
 
 app=Flask(__name__)
+# Gives the default upload folder and assigns what happens during the Post request at URL uplaoder
 UPLOAD_FOLDER = 'uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @main.route('/uploader', methods=['GET', 'POST'])
