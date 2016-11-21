@@ -2,6 +2,10 @@
     "participants": {
         "Dan": [
             "Better Dan"
+        ], 
+        "Someone": [
+            "Character", 
+            "me"
         ]
     }, 
     "messages": {
@@ -18,7 +22,15 @@
             "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 
             "{\"text\": \"main\", \"sender\": \"lol\", \"ID\": 1}", 
             "{\"text\": \"is this thing on?\", \"sender\": \"lol\", \"ID\": 2}", 
-            "{\"text\": \"Hi im a new character\", \"sender\": \"Ezekiel\", \"ID\": 3}"
+            "{\"text\": \"Hi im a new character\", \"sender\": \"Ezekiel\", \"ID\": 3}", 
+            "{\"text\": \"Hi\", \"sender\": \"Character\", \"ID\": 4}", 
+            "{\"text\": \"Hi\", \"sender\": \"Someone\", \"ID\": 5}", 
+            "{\"text\": \"me\", \"sender\": \"me\", \"ID\": 6}", 
+            "{\"text\": \"me\", \"sender\": \"Character\", \"ID\": 7}", 
+            "{\"text\": \"me\", \"sender\": \"me\", \"ID\": 8}", 
+            "{\"text\": \"Me\", \"sender\": \"Someone\", \"ID\": 9}", 
+            "{\"text\": \"Me\", \"sender\": \"Character\", \"ID\": 10}", 
+            "{\"text\": \"Me\", \"sender\": \"me\", \"ID\": 11}"
         ], 
         "march": [
             "{\"text\": \"And now im in a new thread\", \"sender\": \"Ezekiel\", \"ID\": -1}", 
