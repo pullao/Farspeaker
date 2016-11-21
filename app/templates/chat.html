@@ -11,6 +11,9 @@
             var socket;
             var activeThread;
             $(document).ready(function(){
+                //Sets the default tab to the "main" conversation
+                document.getElementById("mainlink").click();
+
                 socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
                 socket.on('connect', function() {
                     socket.emit('joined', {});
@@ -102,36 +105,18 @@
                     <li><button onclick="switchCharacter('resetchar')">Reset Character</button>
                 </ul>
                 <input id="aliasfield" size="80" placeholder="Enter a new character name">
-                <ul class="tab">
-                    <!-- <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'main')" id="defaultOpen">main</a></li>
-                    <li><a href="javascript:void(0)" class="tablinks" onclick="openConvo(event, 'convo2')">convo2</a></li> -->
-                    {% for thread in campaign.data['messages'] %}
-                        <li><a href="javascript:void(0)" id="{{thread}}link" class="tablinks" onclick="openConvo(event, '{{thread}}')">{{thread.title()}}</a></li>
-                    {% endfor %}
-                </ul>
-                <input id="threadfield" size="80" placeholder="Enter a new thread name">
             </div>
             <div id="middlecolumn">
-<!--            <div id="convo2" class="tabcontent">
-                    <span onclick="this.parentElement.style.display='none'">x</span> 
-                    <div id="chatwindow">
-                        <ul id="chat">
-                        {% for line in campaign.data['messages']['main'] %}
-                            <li>{{line.sender+': '+line.text}}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                        
-                </div>
-                <div id="main" class="tabcontent">
-                    <div id="chatwindow">
-                        <ul id="chat">
-                            {% for line in campaign.data['messages']['main'] %}
-                                <li>{{line.sender+': '+line.text}}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>   -->
+                <ul class="tab">
+                    {% for thread in campaign.data['messages'] %}
+                    <li><a href="javascript:void(0)" id="{{thread}}link" class="tablinks" onclick="openConvo(event, '{{thread}}')">{{thread.title()}}</a>
+                        <span onclick="this.parentElement.style.display='none'" onclick="{{thread}}link.parentElement.style.display='none'">x</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <input id="threadfield" size="80" placeholder="Enter a new thread name">
+
                 {% for thread in campaign.data['messages'] %}
                     <div id="{{thread}}" class="tabcontent">
                         <div id="chatwindow">
