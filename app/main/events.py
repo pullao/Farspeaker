@@ -48,6 +48,7 @@ def left(message):
     flask_socketio.emit('status', {'msg': flask.session.get('name') + ' has left the room.'}, room=room)
 
 def parseMessage(msg):
+    """Parses the message sent to the chat, either parsing dice rolls if they exist or if not correctly adding the username/character name onto the front of the message"""
     print (msg)
     content=msg['msg']
     print (content)
@@ -56,7 +57,9 @@ def parseMessage(msg):
         #room = flask.session.get('room')
         #flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
         rollString = content[5:]
+        #Remove the '/roll' string
         parsedList = parseRoll(rollString)
+        #Parse the roll
         msgString = flask.session.get('name') + " rolled:" + rollString + " -->"
         resultsList = list()
         total = 0
@@ -71,7 +74,7 @@ def parseMessage(msg):
         msgString = msgString + diceIntermediates + " = " + str(total)
         room = flask.session.get('room')
         flask_socketio.emit('diceroll', {'msg': msgString}, room=room)
-
+    #Add the character to the front of the message
     else:
         thread = msg['thread']
         try:
@@ -89,7 +92,8 @@ def parseMessage(msg):
         activeCampaign.save()
         flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text, 'thread': thread}, room=flask.session.get('room'))
 
-
+"""Function to parse a roll string. Takes the string and turns it into a list of dicerolls
+    Functionally acts as a factory for Dicerolls, moving that code out of the message parsing"""
 def parseRoll(newRoll):
     plusString = "+ " + newRoll
     unparsedList = tokenizer.rollTokenize(list(), plusString)

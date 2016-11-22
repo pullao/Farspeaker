@@ -1,3 +1,6 @@
+"""A function for tokenizing a string into a set of roll strings
+   For example + 3d4 - 2d6 + 1d8 becomes ["+ 3d4", "- 2d6", "+ 1d8"]
+   A recursive function"""
 def rollTokenize(rollList, messageString):
     if((len(messageString) == 0) or (messageString.isspace())):
         return rollList

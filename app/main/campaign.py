@@ -60,6 +60,7 @@ class Campaign(object):
 			return 0
 		return self.data['messages'][thread][-1].ID+1
 
+	"""method to add a user class to the participants dictionary in the data"""
 	def addUser(player):
 		if player in data['participants']:
 			return 0
