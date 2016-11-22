@@ -1,6 +1,6 @@
 import pytest
-import roll
-import tokenizer
+import ../main/roll
+import ../main/tokenizer
 
 def test_simpleRolls():
 	for x in range(0, 100):
