@@ -12,7 +12,7 @@ import roll
 @socketio.on('joined', namespace='/chat')
 def joined(message):
     """Sent by clients when they enter a room.
-    A status message is broadcast to all people in the room."""
+    Sets the room for socketIO"""
     # Removing this feature the easy way
     room = flask.session.get('room')
     flask_socketio.join_room(room)
@@ -34,6 +34,7 @@ def character(message):
         flask.session['character']=None
     else:
         flask.session['character']=name
+        #If its a new charcter, save it
         if not name in activeCampaign.data['participants'][flask.session.get('name')]:
             activeCampaign.data['participants'][flask.session.get('name')].append(name)
             activeCampaign.save()
@@ -50,6 +51,7 @@ def parseMessage(msg):
     print (msg)
     content=msg['msg']
     print (content)
+    #check to see if the message is a roll command
     if content.startswith('/roll'):
         #room = flask.session.get('room')
         #flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
@@ -76,6 +78,7 @@ def parseMessage(msg):
             character = flask.session.get('character')
         except:
             character = None
+        #create the transmission and send it to the campaign save
         transmission=message.Message(activeCampaign.getID(thread),
             flask.session.get('name'),msg['msg'],character=character)
         print(transmission);

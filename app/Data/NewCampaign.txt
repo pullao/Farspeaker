@@ -1,45 +1,27 @@
 {
     "participants": {
         "Dan": [
-            "Better Dan"
+            "Superman", 
+            "Wonder Woman"
         ], 
-        "Someone": [
-            "Character", 
-            "me"
-        ]
+        "Jake": []
     }, 
     "messages": {
-        "new": [
-            "{\"text\": \"This is a new thread\", \"sender\": \"System\", \"ID\": 0}", 
-            "{\"text\": \"new\", \"sender\": \"lol\", \"ID\": 1}", 
-            "{\"text\": \"hey there buddy\", \"sender\": \"dan\", \"ID\": 2}", 
-            "{\"text\": \"well\", \"sender\": \"dan\", \"ID\": 3}", 
-            "{\"text\": \"but does this work?\", \"sender\": \"lol\", \"ID\": 4}", 
-            "{\"text\": \"Message\", \"sender\": \"Dan\", \"ID\": 5}", 
-            "{\"text\": \"j\", \"sender\": \"Better Dan\", \"ID\": 6}"
+        "new conversation": [
+            "{\"text\": \"hello\", \"sender\": \"Wonder Woman\", \"ID\": -1}", 
+            "{\"text\": \"kjdfngkjdfng\", \"sender\": \"Superman\", \"ID\": 0}", 
+            "{\"text\": \"\", \"sender\": \"Superman\", \"ID\": 1}"
         ], 
         "main": [
-            "{\"text\": \"This is the main thread\", \"sender\": \"System\", \"ID\": 0}", 
-            "{\"text\": \"main\", \"sender\": \"lol\", \"ID\": 1}", 
-            "{\"text\": \"is this thing on?\", \"sender\": \"lol\", \"ID\": 2}", 
-            "{\"text\": \"Hi im a new character\", \"sender\": \"Ezekiel\", \"ID\": 3}", 
-            "{\"text\": \"Hi\", \"sender\": \"Character\", \"ID\": 4}", 
-            "{\"text\": \"Hi\", \"sender\": \"Someone\", \"ID\": 5}", 
-            "{\"text\": \"me\", \"sender\": \"me\", \"ID\": 6}", 
-            "{\"text\": \"me\", \"sender\": \"Character\", \"ID\": 7}", 
-            "{\"text\": \"me\", \"sender\": \"me\", \"ID\": 8}", 
-            "{\"text\": \"Me\", \"sender\": \"Someone\", \"ID\": 9}", 
-            "{\"text\": \"Me\", \"sender\": \"Character\", \"ID\": 10}", 
-            "{\"text\": \"Me\", \"sender\": \"me\", \"ID\": 11}"
-        ], 
-        "march": [
-            "{\"text\": \"And now im in a new thread\", \"sender\": \"Ezekiel\", \"ID\": -1}", 
-            "{\"text\": \"Well done\", \"sender\": \"Dan\", \"ID\": 0}", 
-            "{\"text\": \"fewq\", \"sender\": \"Rob\", \"ID\": 1}", 
-            "{\"text\": \"fewf\", \"sender\": \"BumbleBee\", \"ID\": 2}"
-        ], 
-        "hello": [
-            "{\"text\": \"fewqgrjoe\", \"sender\": \"BumbleBee\", \"ID\": -1}"
+            "{\"text\": \"Hi\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"Hello\", \"sender\": \"Superman\", \"ID\": 1}", 
+            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 2}", 
+            "{\"text\": \"hello\", \"sender\": \"Superman\", \"ID\": 3}", 
+            "{\"text\": \"hjfjh\", \"sender\": \"Dan\", \"ID\": 4}", 
+            "{\"text\": \"hello\", \"sender\": \"Wonder Woman\", \"ID\": 5}", 
+            "{\"text\": \"Hello\", \"sender\": \"Jake\", \"ID\": 6}", 
+            "{\"text\": \"hi\", \"sender\": \"Dan\", \"ID\": 7}", 
+            "{\"text\": \"story!\", \"sender\": \"Wonder Woman\", \"ID\": 8}"
         ]
     }, 
     "name": "New Campaign"
