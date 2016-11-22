@@ -19,7 +19,8 @@ class Message(object):
 		if character!=None:
 			self.sender=character
 		else:
-			self.sender=user# TODO user.name
+			self.sender=user
+		# TODO save this
 		self.user=user
 		self.ID=ID
 		#TODO I dont think we need 'thread' 
