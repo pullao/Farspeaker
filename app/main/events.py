@@ -79,11 +79,12 @@ def parseMessage(msg):
         except:
             character = None
         #create the transmission and send it to the campaign save
+        if not thread in activeCampaign.data['messages']:
+            activeCampaign.data['messages'][thread]=[]
         transmission=message.Message(activeCampaign.getID(thread),
             flask.session.get('name'),msg['msg'],character=character)
         print(transmission);
-        if not thread in activeCampaign.data['messages']:
-            activeCampaign.data['messages'][thread]=[]
+        
         activeCampaign.data['messages'][thread].append(transmission);
         activeCampaign.save()
         flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text, 'thread': thread}, room=flask.session.get('room'))
