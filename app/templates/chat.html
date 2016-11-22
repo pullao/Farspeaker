@@ -24,18 +24,21 @@
                     // $('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
                     $('#chatwindow').scrollTop($('#chatwindow')[0].scrollHeight);
                 });
+                // Handle incoming chat messages
                 socket.on('message', function(data) {
                     console.log(data.msg);
                     $('#'+data.thread).find('#chat').append('<li>'+data.msg+'</li>');
                     // $('#chat').val($('#chat').val() + data.msg + '\n');
                     $('#'+data.thread).find('#chatwindow').scrollTop($('#'+data.thread).find('#chatwindow')[0].scrollHeight);
                 });
+                // Handle incoming dice rolls
                 socket.on('diceroll', function(data) {
                     console.log(data.msg);
                     $('#rollchat').append('<li>'+data.msg+'</li>');
                     // $('#chat').val($('#chat').val() + data.msg + '\n');
                     $('#rolls').scrollTop($('#rolls')[0].scrollHeight);
                 });
+                 // Handle outgounf messages
                 $('#textfield').keypress(function(e) {
                     var code = e.keyCode || e.which;
                     if (code == 13) {
@@ -44,6 +47,7 @@
                         socket.emit('text', {msg: text, thread: activeThread});
                     }
                 });
+                //handle new character requests
                 $('#aliasfield').keypress(function(e) {
                     var code = e.keyCode || e.which;
                     if (code == 13) {
@@ -55,6 +59,7 @@
                         $('#aliasfield').val('');
                     }
                 });
+                //Handle new thread requests
                 $('#threadfield').keypress(function(e) {
                     var code = e.keyCode || e.which;
                     if (code == 13) {
@@ -80,6 +85,7 @@
                 });
             }
 
+        //Switch tabs
         function openConvo(evt, convoName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
