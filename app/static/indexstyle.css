@@ -33,8 +33,7 @@ label {
 	background-color: #CFB53B;
 	color: #FF0000;
 	border-radius: 10px;
-	height: 5%;
-	width:5%;
+	padding: 3px;
 	margin-top: 20px;
 	font-size: 35;
 
