@@ -1,10 +1,13 @@
-p {
-    color: blue;
+*, html {
+    margin:0;
+    padding:0;  
 }
 
 #leftcolumn {
 	width: 25%;
 	float: left;
+  position: relative;
+  height: 90%;
 }
 
 #middlecolumn {
@@ -20,18 +23,18 @@ p {
 }
 
 #chatwindow {
-  position:absolute;
-  top: 80px;
   right: 8;
-  bottom: 30;
+  bottom: 30px;
   left: 8;
-
+  max-height: 70%;
   margin: 0;
   padding: 10px;
   list-style: none;
-  background: #141414;
-  color: #45D40C;
-  font: 1.25em 'Andale Mono', Consolas, 'Courier New';
+  background-image: url("parchment.jpg");
+  background-color: #F1F1D4;
+  background-attachment: local;
+  color: black;
+  font-family: 'MedievalSharp', cursive;
   line-height: 1.6em;
 
   overflow: auto;
@@ -47,8 +50,6 @@ p {
 #textfield {
 	position: absolute;
 	bottom: 10;
-	left: 8;
-	right: 8;
 
 	width:100%;
 }
@@ -56,11 +57,31 @@ p {
 #aliasfield {
 
   width:90%;
+  margin-right:5%;
+  margin-left:5%;
+  position: absolute;
+  bottom: 10px;
+}
+
+#characters {
+  margin-top: 6px;
+}
+
+#characters li {
+  text-align: center;
+  padding:2px;
+}
+
+#characters li a {
+  padding: 10px 4px;
 }
 
 #threadfield {
-
+  margin-top: 5px;
+  margin-bottom: 5px;
   width:90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* Style the list */
@@ -69,8 +90,8 @@ ul.tab {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 1px solid #667F4C;
+    background-color: #8DAF69;
 }
 
 /* Float the list items side by side */
@@ -81,17 +102,18 @@ ul.tab li a {
     display: inline-block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 8px 12px;
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
+    font-family: 'MedievalSharp', cursive;
 }
 
 /* Change background color of links on hover */
-ul.tab li a:hover {background-color: #ddd;}
+ul.tab li a:hover {background-color: #667F4C;}
 
 /* Create an active/current tablink class */
-ul.tab li a:focus, .active {background-color: #ccc;}
+ul.tab li a:focus, .active {background-color: #667F4C;}
 
 /* Style the tab content */
 .tabcontent {
@@ -99,4 +121,44 @@ ul.tab li a:focus, .active {background-color: #ccc;}
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+}
+
+#chattitle {
+  text-align: center;
+  font-family: 'MedievalSharp', cursive;
+  color: #1C7C54;
+  background-color: #CFB53B;
+  font-size: 60px;
+}
+
+#options {
+  margin-top: 6px;
+  text-align: center;
+  padding:2px;
+  font-family: 'MedievalSharp', cursive;
+}
+
+#rolls {
+  margin-top: 6px;
+  text-align: center;
+  padding:2px;
+  font-family: 'MedievalSharp', cursive;
+}
+
+#uploader {
+  padding: 3px;
+  margin: 0 5%;
+}
+
+#rollchat {
+  list-style:none;
+}
+
+#rollchat li {
+  font-size: 12px;
+  padding: 1px;
+}
+
+body {
+    background-color: #d1e5bc;
 }

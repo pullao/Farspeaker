@@ -2,6 +2,7 @@
     <head>
         <title>Flask-SocketIO-Chat</title>
         <link rel="stylesheet" type="text/css" href="../static/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
         <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
         <script type="text/javascript" charset="utf-8">
@@ -104,7 +105,7 @@
         </script>
     </head>
     <body>
-        <h1>Flask-SocketIO-Chat</h1>
+        <h1 id="chattitle">Farspeaker</h1>
         <div id="pagewrap">
             <div id="leftcolumn">
                 <ul id="characters">
@@ -124,7 +125,7 @@
                     {% endfor %}
                 </ul>
 
-                <input id="threadfield" size="80" placeholder="Enter a new thread name">
+                <input id="threadfield" size="80" placeholder="Enter a new thread name and press enter">
 
                 {% for thread in campaign.data['messages'] %}
                     <div id="{{thread}}" class="tabcontent">
@@ -140,14 +141,14 @@
                 <input id="textfield" size="80" placeholder="Enter your message here"><br><br>
             </div>
             <div id="rightcolumn">
-                <div id="options"><p>options here</p>
-                    <form method="post" enctype="multipart/form-data" action="/uploader">
+                <div id="options"><p>Character Upload</p>
+                    <form id="uploader" method="post" enctype="multipart/form-data" action="/uploader">
                         <input type="file" name="file">
                         <input type="submit">
                     </form>
                 </div>
-                <div id="macros"><p>macros here</p></div>
-                <div id="rolls"><p>rolls here</p>
+                <div id="macros"><p></p></div>
+                <div id="rolls"><p>Dice Rolls</p>
                     <ul id="rollchat">
 
                     </ul>

@@ -1,0 +1,21 @@
+*, html {
+    margin:0;
+    padding:0;  
+}
+
+#enterform {
+    padding: 70px 0;
+    text-align: center;
+}
+
+#indextitle {
+	text-align: center;
+	font-family: 'MedievalSharp', cursive;
+	color: #1C7C54;
+	background-color: #CFB53B;
+	font-size: 60px;
+}
+
+body {
+    background-color: #d1e5bc;
+}

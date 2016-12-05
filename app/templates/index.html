@@ -1,13 +1,17 @@
 <html>
     <head>
-        <title>Flask-SocketIO-Chat</title>
+        <title>Farspeaker</title>
+        <link rel="stylesheet" type="text/css" href="../static/indexstyle.css" />
+        <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet">
     </head>
     <body>
-        <h1>Flask-SocketIO-Chat</h1>
-        <form method="POST">
+        <h1 id="indextitle">Farspeaker</h1>
+        <form method="POST" id="enterform">
             {{ form.hidden_tag() }}
             {{ form.name.label }}: {{ form.name() }} {% for error in form.name.errors %}{{ error }}{% endfor %}<br>
             {{ form.submit() }}
+            <!-- https://coolors.co/export/png/cfb53b-dbf4ad-a9e190-cdc776-767522 -->
+            <!-- https://coolors.co/cfb53b-1c7c54-73e2a7-def4c6-1b512d -->
         </form>
     </body>
 </html>
