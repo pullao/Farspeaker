@@ -47,6 +47,8 @@
   border-bottom-left-radius: 3px;
 }
 
+
+
 #textfield {
 	position: absolute;
 	bottom: 10;
@@ -157,6 +159,31 @@ ul.tab li a:focus, .active {background-color: #667F4C;}
 #rollchat li {
   font-size: 12px;
   padding: 1px;
+}
+
+button {
+
+  background-color: #CFB53B;
+  color: #FF0000;
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 20;
+  padding: 3px;
+  font-family: 'MedievalSharp', cursive;
+}
+
+#textfield, #aliasfield, #threadfield {
+   background-color: #CFB53B;
+   background-image: url("parchment.jpg");
+   border-style: groove;
+   font-size: 15;
+   border-radius: 5px;
+   font-family: 'MedievalSharp', cursive;
+   color: black;
+}
+
+#textfield::-webkit-input-placeholder, #aliasfield::-webkit-input-placeholder, #threadfield::-webkit-input-placeholder {
+  color: black;
 }
 
 body {

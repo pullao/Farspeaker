@@ -125,7 +125,7 @@
                     {% endfor %}
                 </ul>
 
-                <input id="threadfield" size="80" placeholder="Enter a new thread name and press enter">
+                <input id="threadfield" size="80" placeholder="Enter a new thread name">
 
                 {% for thread in campaign.data['messages'] %}
                     <div id="{{thread}}" class="tabcontent">
@@ -143,8 +143,8 @@
             <div id="rightcolumn">
                 <div id="options"><p>Character Upload</p>
                     <form id="uploader" method="post" enctype="multipart/form-data" action="/uploader">
-                        <input type="file" name="file">
-                        <input type="submit">
+                        <input type="file" name="file" id="file">
+                        <input type="submit" id="submit">
                     </form>
                 </div>
                 <div id="macros"><p></p></div>

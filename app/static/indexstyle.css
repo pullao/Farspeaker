@@ -8,6 +8,39 @@
     text-align: center;
 }
 
+label {
+	color: #a48d28;
+	font-size: 35;
+	font-family: 'MedievalSharp', cursive;
+}
+
+
+
+#name {
+	 background-color: #CFB53B;
+	 background-image: url("parchment.jpg");
+	 border-style: groove;
+	 width: 25%;
+	 height: 5%;
+	 font-size: 35;
+	 border-radius: 10px;
+	 color: black;
+	 font-family: 'MedievalSharp', cursive;
+}
+
+#submit {
+
+	background-color: #CFB53B;
+	color: #FF0000;
+	border-radius: 10px;
+	height: 5%;
+	width:5%;
+	margin-top: 20px;
+	font-size: 35;
+
+	font-family: 'MedievalSharp', cursive;
+}
+
 #indextitle {
 	text-align: center;
 	font-family: 'MedievalSharp', cursive;
