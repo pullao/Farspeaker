@@ -27,3 +27,5 @@ Oscar Pullan, Jacob Arriola, Dan Gorman
    border="0"
    alt="Flask powered"
    title="Flask powered"></a>
+   
+   [Flask License](http://flask.pocoo.org/docs/0.11/license/#flask-license)
