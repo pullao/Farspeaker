@@ -57,6 +57,7 @@
                     if (code == 13) {
                         name = $('#aliasfield').val();
                         if (name.length>0){
+                            name = name.replace("'",'');
                             socket.emit('character', {msg: name, thread: activeThread});
                             $('#characters').append("<li><button onclick=\"switchCharacter('"+name+"')\">"+name+"</button>");
                         } 
@@ -78,7 +79,7 @@
             });
 
             function newThread(name){
-                $(".tab").append("<li><a href=\"javascript:void(0)\" id=\""+name.toLowerCase()+"link\" class=\"tablinks\" onclick=\"openConvo(event, '"+name.toLowerCase()+"')\">"+name+"</a></li>");
+                $(".tab").append("<li><a href=\"javascript:void(0)\" id=\""+name.toLowerCase()+"link\" class=\"tablinks\" onclick=\"openConvo(event, '"+name.toLowerCase()+"')\">"+name+"</a><span onclick=\"this.parentElement.style.display='none'\" onclick=\""+name.toLowerCase()+"link.parentElement.style.display='none'\">x</span></li>");
                 $("#middlecolumn").append("<div id=\""+name.toLowerCase()+"\" class=\"tabcontent\"><div id=\"chatwindow\"><ul id=\"chat\"></ul></div></div>")
             }
 

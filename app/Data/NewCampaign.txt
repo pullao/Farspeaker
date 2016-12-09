@@ -1,6 +1,10 @@
 {
     "participants": {
-        "Dan": [], 
+        "Brown": [], 
+        "Dan": [
+            "dfgxdfgxgh'gfcfgc", 
+            "apoh"
+        ], 
         "jj": []
     }, 
     "messages": {
@@ -17,16 +21,24 @@
             "{\"text\": \"v hhgg\", \"sender\": \"Dan\", \"ID\": 1}", 
             "{\"text\": \"gggggg\", \"sender\": \"Dan\", \"ID\": 2}"
         ], 
+        "newest": [
+            "{\"text\": \"thread\", \"sender\": \"Dan\", \"ID\": 0}"
+        ], 
         "thread": [
             "{\"text\": \"dgsgs\", \"sender\": \"Dan\", \"ID\": 0}", 
             "{\"text\": \"ghhc\", \"sender\": \"Dan\", \"ID\": 1}"
         ], 
         "tetsing": [
-            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 0}"
+            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"Why are you so brown\", \"sender\": \"Brown\", \"ID\": 1}", 
+            "{\"text\": \"dope\", \"sender\": \"Dan\", \"ID\": 2}"
         ], 
         "itemshop": [
             "{\"text\": \"Thread\", \"sender\": \"Dan\", \"ID\": 0}", 
-            "{\"text\": \"fff\", \"sender\": \"Dan\", \"ID\": 1}"
+            "{\"text\": \"fff\", \"sender\": \"Dan\", \"ID\": 1}", 
+            "{\"text\": \"hgghc\", \"sender\": \"dfgxdfgxgh'gfcfgc\", \"ID\": 2}", 
+            "{\"text\": \"kj\", \"sender\": \"Dan\", \"ID\": 3}", 
+            "{\"text\": \"jnjk\", \"sender\": \"Dan\", \"ID\": 4}"
         ], 
         "main": [
             "{\"text\": \"Luk\", \"sender\": \"Dan\", \"ID\": 0}", 
@@ -37,7 +49,10 @@
             "{\"text\": \"hhhh\", \"sender\": \"Dan\", \"ID\": 5}", 
             "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 6}", 
             "{\"text\": \"this works\", \"sender\": \"Dan\", \"ID\": 7}", 
-            "{\"text\": \"work\", \"sender\": \"Dan\", \"ID\": 8}"
+            "{\"text\": \"work\", \"sender\": \"Dan\", \"ID\": 8}", 
+            "{\"text\": \"nmk\", \"sender\": \"apoh\", \"ID\": 9}", 
+            "{\"text\": \"jjj\", \"sender\": \"Dan\", \"ID\": 10}", 
+            "{\"text\": \"hhh\", \"sender\": \"apoh\", \"ID\": 11}"
         ], 
         "best": [
             "{\"text\": \"Best\", \"sender\": \"Dan\", \"ID\": 0}"
