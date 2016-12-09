@@ -18,9 +18,12 @@ class DiceRoll:
       rollString = rollString.replace(" ", "")
       if(rollString.isdigit()):
          return int(rollString)
-      self.dicenum = rollString[0]
-      rollString = rollString[1:]
-      rollString = rollString[1:]
+      dlimiter = rollString.find("d")
+      if(dlimiter == 0):
+         self.dicenum = 1
+      else:
+         self.dicenum = rollString[0:dlimiter]
+      rollString = rollString[dlimiter+1:]
       self.resultList = self.rollDice(self.dicenum, rollString)
       total = 0
       for x in self.resultList:
