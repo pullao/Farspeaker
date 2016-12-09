@@ -27,9 +27,12 @@
                 });
                 // Handle incoming chat messages
                 socket.on('message', function(data) {
-                    console.log(data.msg);
+                    if ($('#'+data.thread).length==0){
+                        newThread(data.thread);
+                    }
                     $('#'+data.thread).find('#chat').append('<li>'+data.msg+'</li>');
                     // $('#chat').val($('#chat').val() + data.msg + '\n');
+                    console.log(data.thread);
                     $('#'+data.thread).find('#chatwindow').scrollTop($('#'+data.thread).find('#chatwindow')[0].scrollHeight);
                 });
                 // Handle incoming dice rolls
@@ -66,13 +69,17 @@
                     if (code == 13) {
                         name = $('#threadfield').val();
                         if (name.length>0){
-                            $(".tab").append("<li><a href=\"javascript:void(0)\" id=\""+name.toLowerCase()+"link\" class=\"tablinks\" onclick=\"openConvo(event, '"+name.toLowerCase()+"')\">"+name+"</a></li>");
-                            $("#middlecolumn").append("<div id=\""+name.toLowerCase()+"\" class=\"tabcontent\"><div id=\"chatwindow\"><ul id=\"chat\"></ul></div></div>")
+                            newThread(name);
                         }
                         $('#threadfield').val('');
                     }
                 });
             });
+
+            function newThread(name){
+                $(".tab").append("<li><a href=\"javascript:void(0)\" id=\""+name.toLowerCase()+"link\" class=\"tablinks\" onclick=\"openConvo(event, '"+name.toLowerCase()+"')\">"+name+"</a></li>");
+                $("#middlecolumn").append("<div id=\""+name.toLowerCase()+"\" class=\"tabcontent\"><div id=\"chatwindow\"><ul id=\"chat\"></ul></div></div>")
+            }
 
             function switchCharacter(char){
                 socket.emit('character', {msg: char, thread: activeThread});

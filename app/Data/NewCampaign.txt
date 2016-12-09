@@ -1,0 +1,43 @@
+{
+    "participants": {
+        "Dan": [], 
+        "jj": []
+    }, 
+    "messages": {
+        "new thread": [
+            "{\"text\": \"css done broke\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"hhhh\", \"sender\": \"Dan\", \"ID\": 1}", 
+            "{\"text\": \"hhhhh\", \"sender\": \"Dan\", \"ID\": 2}", 
+            "{\"text\": \"hello again\", \"sender\": \"Dan\", \"ID\": 3}", 
+            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 4}", 
+            "{\"text\": \"Testing\", \"sender\": \"Dan\", \"ID\": 5}"
+        ], 
+        "bes thread": [
+            "{\"text\": \"ggggg\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"v hhgg\", \"sender\": \"Dan\", \"ID\": 1}", 
+            "{\"text\": \"gggggg\", \"sender\": \"Dan\", \"ID\": 2}"
+        ], 
+        "thread": [
+            "{\"text\": \"dgsgs\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"ghhc\", \"sender\": \"Dan\", \"ID\": 1}"
+        ], 
+        "tetsing": [
+            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 0}"
+        ], 
+        "main": [
+            "{\"text\": \"Luk\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"i am your father\", \"sender\": \"Dan\", \"ID\": 1}", 
+            "{\"text\": \"hhhh\", \"sender\": \"Dan\", \"ID\": 2}", 
+            "{\"text\": \"hh]\", \"sender\": \"Dan\", \"ID\": 3}", 
+            "{\"text\": \"hhh\", \"sender\": \"Dan\", \"ID\": 4}", 
+            "{\"text\": \"hhhh\", \"sender\": \"Dan\", \"ID\": 5}", 
+            "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 6}", 
+            "{\"text\": \"this works\", \"sender\": \"Dan\", \"ID\": 7}", 
+            "{\"text\": \"work\", \"sender\": \"Dan\", \"ID\": 8}"
+        ], 
+        "best": [
+            "{\"text\": \"Best\", \"sender\": \"Dan\", \"ID\": 0}"
+        ]
+    }, 
+    "name": "New Campaign"
+}
