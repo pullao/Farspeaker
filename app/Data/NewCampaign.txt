@@ -24,6 +24,10 @@
         "tetsing": [
             "{\"text\": \"hello\", \"sender\": \"Dan\", \"ID\": 0}"
         ], 
+        "itemshop": [
+            "{\"text\": \"Thread\", \"sender\": \"Dan\", \"ID\": 0}", 
+            "{\"text\": \"fff\", \"sender\": \"Dan\", \"ID\": 1}"
+        ], 
         "main": [
             "{\"text\": \"Luk\", \"sender\": \"Dan\", \"ID\": 0}", 
             "{\"text\": \"i am your father\", \"sender\": \"Dan\", \"ID\": 1}", 
