@@ -68,6 +68,7 @@
                     var code = e.keyCode || e.which;
                     if (code == 13) {
                         name = $('#threadfield').val();
+                        name = name.replace(/\s/g,'');
                         if (name.length>0){
                             newThread(name);
                         }
