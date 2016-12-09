@@ -1,3 +1,5 @@
+import roll
+
 """A function for tokenizing a string into a set of roll strings
    For example + 3d4 - 2d6 + 1d8 becomes ["+ 3d4", "- 2d6", "+ 1d8"]
    A recursive function"""
@@ -14,14 +16,13 @@ def rollTokenize(rollList, messageString):
         rollList = rollList + [roll]
         return rollTokenize(rollList, "")
 
-
-if __name__ == '__main__':
-	#rollist = rollTokenize(list(), "+ 4d6 + 3d8 - 2d2  ")
-	#for x in rollist:
-	#	print x
-	#rollist2 = rollTokenize(list(), "/ 4d6 + askdmqwoebqwkpjeqw * 2d20141254")
-	#for x in rollist2:
-	#	print x
-    rollist3 = rollTokenize(list(), "  1d6 + 2")
-    for x in rollist3:
-        print x
+"""Function to parse a roll string. Takes the string and turns it into a list of dicerolls
+    Functionally acts as a factory for Dicerolls, moving that code out of the message parsing"""
+def parseRoll(newRoll):
+    plusString = "+ " + newRoll
+    unparsedList = rollTokenize(list(), plusString)
+    parsedList = list()
+    for x in unparsedList:
+        diceroll = roll.DiceRoll(x)
+        parsedList = parsedList + [diceroll]
+    return parsedList

@@ -58,7 +58,7 @@ def parseMessage(msg):
         #flask_socketio.emit('status', {'msg': flask.session.get('name') + ' rolled a ' + str(random.randint(1,6))})
         rollString = content[5:]
         #Remove the '/roll' string
-        parsedList = parseRoll(rollString)
+        parsedList = tokenizer.parseRoll(rollString)
         #Parse the roll
         msgString = flask.session.get('name') + " rolled:" + rollString + " -->"
         resultsList = list()
@@ -92,13 +92,4 @@ def parseMessage(msg):
         activeCampaign.save()
         flask_socketio.emit('message', {'msg': transmission.sender+': '+transmission.text, 'thread': thread}, room=flask.session.get('room'))
 
-"""Function to parse a roll string. Takes the string and turns it into a list of dicerolls
-    Functionally acts as a factory for Dicerolls, moving that code out of the message parsing"""
-def parseRoll(newRoll):
-    plusString = "+ " + newRoll
-    unparsedList = tokenizer.rollTokenize(list(), plusString)
-    parsedList = list()
-    for x in unparsedList:
-        diceroll = roll.DiceRoll(x)
-        parsedList = parsedList + [diceroll]
-    return parsedList
+
